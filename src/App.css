@@ -7,5 +7,63 @@
 }
 
 .App {
+  height: 800px;
+  width: 400px;
+  margin: auto;
+  background-color: rgb(231, 234, 236);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Main {
+  flex: 1 0 auto;
+  padding: 2rem 1rem;
+}
+
+.Filter-ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.Filter-li {
+  width: 30%;
+  padding: 0.5rem 0;
+  border-radius: 2px;
+  border: 2px solid deeppink;
+}
+
+.Filter-li:hover {
+  background-color: deeppink;
+  cursor: pointer;
+}
+
+.Todo-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.Todo-li {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+.On {
+  background-color: green;
+}
+
+.Off {
+  background-color: grey;
 }
