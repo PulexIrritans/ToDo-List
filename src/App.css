@@ -7,29 +7,42 @@
 }
 
 .App {
-  height: 800px;
-  width: 400px;
+  height: 100vh;
+  width: 360px;
   margin: auto;
-  background-color: rgb(231, 234, 236);
+  background-color: rgb(226, 239, 236);
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: 2rem 1rem 0.5rem 1rem;
+
 }
 
-.header {
+.Header {
   display: flex;
-  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.Header-input {
+  width: 80%;
+  padding: 0.5rem 0.5rem;
+
+}
+
+.Header-button {
+  width: 20%;
 }
 
 .Main {
-  flex: 1 0 auto;
-  padding: 2rem 1rem;
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
 }
 
 .Filter-ul {
   display: flex;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
@@ -48,22 +61,45 @@
 .Todo-ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 
 }
 
 .Todo-li {
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(245, 199, 223);
+  padding: 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
 }
-
-
 
 .On {
-  background-color: green;
+  background-color: deeppink;
 }
 
-.Off {
-  background-color: grey;
+.Trash-button {
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+.Trash-svg {
+  width: 1.1rem;
+}
+
+.Todo-li-button {
+  font-size: 0.8rem;
+  width: 20%;
+  padding: 0.5rem 0.2rem;
+}
+
+.footer {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
 }

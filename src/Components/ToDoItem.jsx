@@ -1,10 +1,12 @@
-const ToDoItem = ({ text, remove, toggleStatus, status }) => {
+import {ReactComponent as TrashLogo} from '../trash.svg'
+
+const ToDoItem = ({ text, remove, toggleStatus, status, filterStatus }) => {
     return (
-        <>
-        <button onClick={remove}>X</button>
+        <li className={`Todo-li ${filterStatus===status || filterStatus==="All" ? "" : "hidden"}`}>
+        <button className="Trash-button" onClick={remove}><TrashLogo className="Trash-svg"/></button>
         <p>{text}</p>
-        <button onClick={toggleStatus}>{status}</button>
-        </>
+        <button className={`Todo-li-button ${status}`} onClick={toggleStatus}>{status}</button>
+        </li>
     )
 }
 

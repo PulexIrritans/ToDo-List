@@ -1,6 +1,8 @@
 const Footer = () => {
     return (
-        <p>Created without using a todo list</p>
+        <div className="footer">
+        <p>Created without a todo list</p>
+        </div>
     )
 }
 
