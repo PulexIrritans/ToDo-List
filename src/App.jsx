@@ -6,10 +6,10 @@ import Filter from "./Components/Filter";
 import React, { useState } from 'react';
 
 function App() {
+  const filter = ([{name: "All", status: "On"}, {name: "Pending", status: "Off"}, {name: "Done", status: "Off"}]);
 
   const [items, setItems] = useState([]);
-  const [filter, setFilter] = useState([{name: "All", status: "On"}, {name: "Pending", status: "Off"}, {name: "Done", status: "Off"}]);
-  const [filterStatus, setFilterStatus] = useState("All");
+  const [filterStatus, setFilterStatus] = useState("Pending");
 
   // DO NOT Delete item from the filter function - it won't work!!
   const remove = (number) => {
@@ -25,15 +25,12 @@ function App() {
 
   const toggleStatus = (number) => {
     const newItems = [...items]
-    newItems[number].status === "PENDING" ? newItems[number].status = "DONE" : newItems[number].status = "PENDING"
+    newItems[number].status === "Pending" ? newItems[number].status = "Done" : newItems[number].status = "Pending"
     setItems(newItems)
   }
 
-  const showfilter = (number, name) => {
+  const showfilter = (name) => {
     setFilterStatus(name)
-
-
-
   }
 
   return (
@@ -42,7 +39,7 @@ function App() {
       <main className="Main">
         <Filter filter={filter} showfilter={showfilter} filterStatus={filterStatus} className="Filter"/>
         <ul className="Todo-ul">
-          {items.map((item, index) => (<li className="Todo-li" key={index}><ToDoItem text={item.text} status={item.status} remove={() => remove(index)} toggleStatus={() => toggleStatus(index)} filterStatus={filterStatus}/></li>))}
+          {items.map((item, index) => <ToDoItem key={index} text={item.text} status={item.status} remove={() => remove(index)} toggleStatus={() => toggleStatus(index)} filterStatus={filterStatus}/>)}
         </ul>
       </main>
       <Footer/>

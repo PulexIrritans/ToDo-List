@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 const Header = ({ add }) => {
-    const [newTodo, setNewTodo] = useState({text:"", status:"PENDING"})
+    const [newTodo, setNewTodo] = useState({text:"", status:"Pending"})
     
     const handleInput = (event) => {
         const input = {...newTodo}
-        input.text = event.target.value;
+        input.text = event.target.value
         setNewTodo(input)
     } 
 
     return (
         <div className="Header">
-            <input className="Header-input" onInput={handleInput} type="text" name="" id="" placeholder="My Todos"/>
+            <input className="Header-input" onInput={handleInput} type="text" name="" id="" placeholder="My new Toos"/>
             <button className="Header-button" onClick={() => add(newTodo)}>Add</button>
             
         </div>
