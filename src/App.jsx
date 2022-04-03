@@ -9,7 +9,7 @@ function App() {
   const filter = ([{name: "All", status: "On"}, {name: "Pending", status: "Off"}, {name: "Done", status: "Off"}]);
 
   const [items, setItems] = useState([]);
-  const [filterStatus, setFilterStatus] = useState("Pending");
+  const [filterStatus, setFilterStatus] = useState("All");
 
   // DO NOT Delete item from the filter function - it won't work!!
   const remove = (number) => {

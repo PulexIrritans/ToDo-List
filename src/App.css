@@ -8,9 +8,9 @@
 
 .App {
   height: 100vh;
-  width: 400px;
+  width: 360px;
   margin: auto;
-  background-color: rgb(231, 234, 236);
+  background-color: rgb(226, 239, 236);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -73,6 +73,7 @@
   background-color: rgb(245, 199, 223);
   padding: 0.4rem;
   border-radius: 5px;
+  font-size: 0.8rem;
 }
 
 .On {
