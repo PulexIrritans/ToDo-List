@@ -7,14 +7,14 @@
 }
 
 .App {
-  height: 800px;
+  height: 100vh;
   width: 400px;
   margin: auto;
   background-color: rgb(231, 234, 236);
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0.5rem 1rem;
 
 }
 
@@ -34,7 +34,9 @@
 }
 
 .Main {
-  flex: 1 0 auto;
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
 }
 
 .Filter-ul {
@@ -59,20 +61,39 @@
 .Todo-ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 
 }
 
 .Todo-li {
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(245, 199, 223);
+  padding: 0.4rem;
+  border-radius: 5px;
 }
 
 .On {
   background-color: deeppink;
 }
 
-/* .Off {
-  background-color: grey;
-} */
+.Trash-button {
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+.Trash-svg {
+  width: 1.1rem;
+}
+
+.Todo-li-button {
+  font-size: 0.8rem;
+  width: 20%;
+  padding: 0.5rem 0.2rem;
+}
+
+.footer {
+  margin-top: 0.5rem;
+}

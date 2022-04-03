@@ -11,7 +11,7 @@ function App() {
   const [filter, setFilter] = useState([{name: "All", status: "On"}, {name: "Active", status: "Off"}, {name: "Completed", status: "Off"}]);
 
   const remove = (number) => {
-    const newItems = items.filter((item, index) => index !== number)
+    const newItems = items.filter((index) => index !== number)
     setItems(newItems)
   }
 
@@ -23,7 +23,7 @@ function App() {
 
   const toggleStatus = (number) => {
     const newItems = [...items]
-    newItems[number].status === "PENDING" ? newItems[number].status = "COMPLETED" : newItems[number].status = "PENDING"
+    newItems[number].status === "PENDING" ? newItems[number].status = "DONE" : newItems[number].status = "PENDING"
     setItems(newItems)
   }
 
@@ -50,7 +50,7 @@ function App() {
           {items.map((item, index) => (<li className="Todo-li" key={index}><ToDoItem text={item.text} status={item.status} remove={() => remove(index)} toggleStatus={() => toggleStatus(index)}/></li>))}
         </ul>
       </main>
-      <Footer className="footer"/>
+      <Footer/>
     </div>
   );
 }
