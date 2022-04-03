@@ -29,7 +29,7 @@ function App() {
 
   const showfilter = (number) => {
     const newfilter = [...filter]
-    newfilter.forEach((item) => item.status = "Off")
+    newfilter.forEach((item) => item.status = "")
     newfilter[number].status = "On"
     setFilter(newfilter)
 
