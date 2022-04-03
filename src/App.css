@@ -14,22 +14,33 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: 2rem 1rem;
+
 }
 
-.header {
+.Header {
   display: flex;
-  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.Header-input {
+  width: 80%;
+  padding: 0.5rem 0.5rem;
+
+}
+
+.Header-button {
+  width: 20%;
 }
 
 .Main {
   flex: 1 0 auto;
-  padding: 2rem 1rem;
 }
 
 .Filter-ul {
   display: flex;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
@@ -57,8 +68,6 @@
   justify-content: space-between;
 
 }
-
-
 
 .On {
   background-color: deeppink;

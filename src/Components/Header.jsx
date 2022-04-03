@@ -10,11 +10,11 @@ const Header = ({ add }) => {
     } 
 
     return (
-        <>
-            <input onInput={handleInput} type="text" name="" id="" placeholder="My Todos"/>
-            <button onClick={() => add(newTodo)}>Add</button>
+        <div className="Header">
+            <input className="Header-input" onInput={handleInput} type="text" name="" id="" placeholder="My Todos"/>
+            <button className="Header-button" onClick={() => add(newTodo)}>Add</button>
             
-        </>
+        </div>
     )
 }
 

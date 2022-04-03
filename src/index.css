@@ -12,6 +12,12 @@ body {
   align-items: center;
 }
 
+button, input {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

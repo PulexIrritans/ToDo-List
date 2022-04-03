@@ -1,3 +1,5 @@
+import {ReactComponent as TrashLogo} from '../trash.svg'
+
 const ToDoItem = ({ text, remove, toggleStatus, status }) => {
     return (
         <>

@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header add={add} className="header"/>
+      <Header add={add}/>
       <main className="Main">
         <Filter filter={filter} showfilter={showfilter} className="Filter"/>
         <ul className="Todo-ul">
