@@ -1,6 +1,6 @@
 import {ReactComponent as TrashLogo} from '../trash.svg'
 
-const ToDoItem = ({ text, remove, toggleStatus, status }) => {
+const ToDoItem = ({ text, remove, toggleStatus, status, filterStatus }) => {
     return (
         <>
         <button className="Trash-button" onClick={remove}><TrashLogo className="Trash-svg"/></button>
