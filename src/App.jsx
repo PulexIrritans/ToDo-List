@@ -11,7 +11,7 @@ function App() {
   const [filter, setFilter] = useState([{name: "All", status: "On"}, {name: "Active", status: "Off"}, {name: "Completed", status: "Off"}]);
 
   const remove = (number) => {
-    const newItems = items.filter((index) => index !== number)
+    const newItems = items.filter((item, index) => index !== number)
     setItems(newItems)
   }
 
