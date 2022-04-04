@@ -13,7 +13,7 @@ function App() {
 
   // DO NOT Delete item from the filter function - it won't work!!
   const remove = (number) => {
-    const newItems = items.filter((item, index) => index !== number)
+    const newItems = items.filter((item) => item.id !== number)
     setItems(newItems)
   }
 
@@ -24,8 +24,9 @@ function App() {
   }
 
   const toggleStatus = (number) => {
-    const newItems = [...items]
-    newItems[number].status === "Pending" ? newItems[number].status = "Done" : newItems[number].status = "Pending"
+    const newItems = items.map((item => {if (item.id === number) {return {
+      ...item,
+      status: item.status==="Done" ? "Pending" : "Done"}} else {return item}}))
     setItems(newItems)
   }
 
@@ -37,9 +38,9 @@ function App() {
     <div className="App">
       <Header add={add}/>
       <main className="Main">
-        <Filter filter={filter} showfilter={showfilter} filterStatus={filterStatus} className="Filter"/>
+        <Filter filter={filter} showfilter={showfilter} filterStatus={filterStatus}/>
         <ul className="Todo-ul">
-          {items.map((item, index) => <ToDoItem key={index} text={item.text} status={item.status} remove={() => remove(index)} toggleStatus={() => toggleStatus(index)} filterStatus={filterStatus}/>)}
+          {items.filter((item => filterStatus==="All" || item.status ===filterStatus)).map((item) => <ToDoItem key={item.id} text={item.text} status={item.status} remove={() => remove(item.id)} toggleStatus={() => toggleStatus(item.id)} filterStatus={filterStatus}/>)}
         </ul>
       </main>
       <Footer/>

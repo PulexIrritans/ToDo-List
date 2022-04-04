@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import {nanoid} from "nanoid";
 
 const Header = ({ add }) => {
-    const [newTodo, setNewTodo] = useState({text:"", status:"Pending"})
+    const [newTodo, setNewTodo] = useState({id: "", text:"", status:"Pending"})
     
     const handleInput = (event) => {
         const input = {...newTodo}
         input.text = event.target.value
+        input.id = nanoid()
         setNewTodo(input)
     } 
 
