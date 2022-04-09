@@ -5,12 +5,12 @@ import {ReactComponent as ConfirmLogo} from '../confirm.svg'
 
 const ToDoItem = ({ text, remove, toggleStatus, status, handleUpdateInput }) => {
 
-const [detailsMode, setDetailsMode] = useState(false)
+const [editMode, setEditMode] = useState(false)
 
 
     return  <li className="Todo-li">
-        {detailsMode ? (
-            <form onSubmit ={setDetailsMode}>
+        {editMode ? (
+            <form onSubmit ={setEditMode}>
                  <input onInput={handleUpdateInput} value={text}></input>
                  <button><ConfirmLogo style={{width: "20px"}}/></button>
             </form> 
@@ -18,7 +18,7 @@ const [detailsMode, setDetailsMode] = useState(false)
         <>
         <button className="Trash-button" onClick={remove}><TrashLogo className="Trash-svg"/></button>
         <p>{text}</p>
-        <div onClick={setDetailsMode}><EditLogo style={{width: "20px"}}/></div>
+        <div onClick={setEditMode}><EditLogo style={{width: "20px"}}/></div>
         <button className={`Todo-li-button ${status}`} onClick={toggleStatus}>{status}</button>
         </>
         )}
