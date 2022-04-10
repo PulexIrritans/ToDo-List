@@ -28,7 +28,11 @@ function App() {
     setNewTodo(input);
   };
 
-  const handleUpdateInput = () => {}
+  const handleUpdateInput = (event, id) => {
+    console.log(event, id)
+  //  const updatedToDoList = todoItemsList.map(item => item.id === id ? item.text = e.target.value : item)
+  //  setTodoItemsList(updatedToDoList)
+  }
 
   const add = (todo) => {
     const newItems = [...todoItemsList];
@@ -36,7 +40,6 @@ function App() {
     setTodoItemsList(newItems);
   };
 
-  // DO NOT Delete item from the filter function - it won't work!!
   const remove = (number) => {
     const newItems = todoItemsList.filter((item) => item.id !== number);
     setTodoItemsList(newItems);
