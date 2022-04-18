@@ -32,6 +32,7 @@ function App() {
     const newItems = [...todoItemsList];
     newItems.push(todo);
     setTodoItemsList(newItems);
+    
   };
 
   const updateTodoList = (id, updatedTodoText) => {
