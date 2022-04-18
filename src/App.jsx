@@ -28,11 +28,12 @@ function App() {
     setNewTodo(input);
   };
 
-  const add = (todo) => {
+  const add = (event, todo) => {
+    event.preventDefault();
+    event.target.reset()
     const newItems = [...todoItemsList];
     newItems.push(todo);
     setTodoItemsList(newItems);
-    
   };
 
   const updateTodoList = (id, updatedTodoText) => {
