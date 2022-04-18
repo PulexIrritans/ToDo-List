@@ -28,18 +28,16 @@ function App() {
     setNewTodo(input);
   };
 
-  const handleUpdateInput = (event, id) => {
-    console.log(todoItemsList)
-    const updatedToDoList = todoItemsList.map(item => item.id === id ? {...item, text: event.target.value} : item)
-    console.log(updatedToDoList)
-    setTodoItemsList(updatedToDoList)
-  }
-
   const add = (todo) => {
     const newItems = [...todoItemsList];
     newItems.push(todo);
     setTodoItemsList(newItems);
   };
+
+  const updateTodoList = (id, updatedTodoText) => {
+    const updatedTodoList = todoItemsList.map(item => item.id === id ? {...item, text: updatedTodoText} : item)
+    setTodoItemsList(updatedTodoList)
+  }
 
   const remove = (number) => {
     const newItems = todoItemsList.filter((item) => item.id !== number);
@@ -87,7 +85,7 @@ function App() {
                 remove={() => remove(item.id)}
                 toggleStatus={() => toggleStatus(item.id)}
                 filterStatus={filterStatus}
-                handleUpdateInput={handleUpdateInput}
+                updateTodoList={updateTodoList}
               />
             ))}
         </ul>
