@@ -29,9 +29,10 @@ function App() {
   };
 
   const handleUpdateInput = (event, id) => {
-    console.log(event, id)
-  //  const updatedToDoList = todoItemsList.map(item => item.id === id ? item.text = e.target.value : item)
-  //  setTodoItemsList(updatedToDoList)
+    console.log(todoItemsList)
+    const updatedToDoList = todoItemsList.map(item => item.id === id ? {...item, text: event.target.value} : item)
+    console.log(updatedToDoList)
+    setTodoItemsList(updatedToDoList)
   }
 
   const add = (todo) => {
@@ -80,12 +81,13 @@ function App() {
             .map((item) => (
               <ToDoItem
                 key={item.id}
+                id={item.id}
                 text={item.text}
                 status={item.status}
                 remove={() => remove(item.id)}
                 toggleStatus={() => toggleStatus(item.id)}
                 filterStatus={filterStatus}
-                handleUpdateInput={() => handleUpdateInput(item.id)}
+                handleUpdateInput={handleUpdateInput}
               />
             ))}
         </ul>

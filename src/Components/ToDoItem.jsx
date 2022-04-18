@@ -3,17 +3,17 @@ import {ReactComponent as TrashLogo} from '../trash.svg'
 import {ReactComponent as EditLogo} from '../edit.svg'
 import {ReactComponent as ConfirmLogo} from '../confirm.svg'
 
-const ToDoItem = ({ text, remove, toggleStatus, status, handleUpdateInput }) => {
+const ToDoItem = ({ id, text, remove, toggleStatus, status, handleUpdateInput }) => {
 
 const [editMode, setEditMode] = useState(false)
 
 
     return  <li className="Todo-li">
         {editMode ? (
-            <form onSubmit ={setEditMode}>
-                 <input onInput={handleUpdateInput} value={text}></input>
-                 <button><ConfirmLogo style={{width: "20px"}}/></button>
-            </form> 
+                 <>
+                 <input onInput={(event) => handleUpdateInput(event, id)} value={text}></input>
+                 <button onClick={setEditMode}><ConfirmLogo style={{width: "20px"}}/></button>
+                 </>
         ) : (
         <>
         <button className="Trash-button" onClick={remove}><TrashLogo className="Trash-svg"/></button>
